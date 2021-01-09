@@ -5,21 +5,18 @@
  */
 package project.management.system;
 
-/**
- *
- * @author user
- */
+
 public class Task {
     
    private String taskName;     
    private String taskDeadline;
 
-    public void setName(String name) {
-        this.taskName = name;
+    public void setName(String taskName) {
+        this.taskName = taskName;
     }
 
-    public void setDeadline(String deadline) {
-        this.taskDeadline = deadline;
+    public void setDeadline(String taskDeadline) {
+        this.taskDeadline = taskDeadline;
     }
    
 
