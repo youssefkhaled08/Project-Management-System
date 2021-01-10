@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project.management.system;
 
-/**
- *
- * @author user
- */
 public class Task {
     
    private String taskName;     
@@ -30,11 +21,10 @@ public class Task {
     public String getDeadline() {
         return taskDeadline;
     }
-    public Task ()
+    public Task (String taskName, String taskDeadline)
     {
-      this.taskName=taskName;
-      this.taskDeadline=taskDeadline;
-    
+      this.taskName = taskName;
+      this.taskDeadline = taskDeadline;
     }
     
     enum taskStatus {       // Task Status 
