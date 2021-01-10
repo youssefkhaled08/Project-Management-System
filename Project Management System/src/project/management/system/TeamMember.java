@@ -6,7 +6,7 @@ import project.management.system.Task.*;
 public class TeamMember {
     private String username;
     private String password;
-    private ArrayList<Task> assignedTasks = new ArrayList<>();
+    protected ArrayList<Task> assignedTasks = new ArrayList<>();
     
     public TeamMember(String username, String password){
         this.username = username;
