@@ -5,7 +5,7 @@ public class Task {
     private String taskName;     
     private String taskDeadline;
    
-    private enum Status 
+    public enum Status 
     {       
         TO_DO,
         ON_GOING,
@@ -20,22 +20,22 @@ public class Task {
         this.taskStatus = taskStatus;
     }
     
-    public void setName(String taskName) {
+    public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
 
-    public void setDeadline(String taskDeadline) {
+    public void setTaskDeadline(String taskDeadline) {
         this.taskDeadline = taskDeadline;
     }
 
     public void setTaskStatus(Status taskStatus){
         this.taskStatus = taskStatus;
     }
-    public String getName() {
+    public String getTaskName() {
         return taskName;
     }
 
-    public String getDeadline() {
+    public String getTaskDeadline() {
         return taskDeadline;
     }
     
