@@ -7,6 +7,9 @@ public class TeamMember {
     private String username;
     private String password;
     protected ArrayList<Task> assignedTasks = new ArrayList<>();
+
+    public TeamMember() {
+    }
     
     public TeamMember(String username, String password){
         this.username = username;
