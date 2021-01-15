@@ -8,6 +8,9 @@ public class TeamMember {
     private String password;
     private String accountType;
     protected ArrayList<Task> assignedTasks = new ArrayList<>();
+
+    public TeamMember() {
+    }
     
     public TeamMember(String username, String password){
         this.username = username;
