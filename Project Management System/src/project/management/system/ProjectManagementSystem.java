@@ -5,13 +5,16 @@ import java.util.ArrayList;
 public class ProjectManagementSystem {
 
     public static void main(String[] args) {
-        ArrayList <TeamMember> teamMembers = new ArrayList<>();
+        ArrayList <TeamMember> teamMembers = new ArrayList<>(); 
+       TeamMember  a7a1 = new TeamMember("ahmed@gmail","ahmed","123","member");
+        TeamMember a7a2 = new TeamMember("lol@gmail","lol","123","leader");
+       
+       teamMembers.add(a7a1);
+       teamMembers.add(a7a2);
+
+        new sign_up(teamMembers).setVisible(true);
         
         
-        signUp sign = new signUp(teamMembers);
-        sign.setInformation(teamMembers);
-        
-        signUp sign2 = new signUp(teamMembers);
-        sign2.setInformation(teamMembers);
+
     }    
 }
