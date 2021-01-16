@@ -27,12 +27,7 @@ public class sign_up extends javax.swing.JFrame {
             }
             
         });
-        show.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                signUp.show(teamMembers);
-            }
-        });
+        
     }
 
     /**
@@ -54,7 +49,6 @@ public class sign_up extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        show = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
@@ -88,8 +82,6 @@ public class sign_up extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel5.setText("Project Managment System");
 
-        show.setText("show");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,10 +107,6 @@ public class sign_up extends javax.swing.JFrame {
                 .addGap(241, 241, 241)
                 .addComponent(jLabel5)
                 .addContainerGap(253, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(show)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,9 +131,7 @@ public class sign_up extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signUpBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(show)
-                .addGap(105, 105, 105))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         pack();
@@ -203,7 +189,6 @@ public class sign_up extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jobType;
     private javax.swing.JPasswordField password;
-    private javax.swing.JButton show;
     private javax.swing.JButton signUpBtn;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
