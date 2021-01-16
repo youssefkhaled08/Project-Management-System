@@ -61,8 +61,11 @@ public class signUp {
                 
                 else{
                     if(signUp.checkEmail(teamMembers, email, userName, password, jobType)){
-                        JOptionPane.showMessageDialog(null, "Email Or UserName already exists", "Invalid", JOptionPane.INFORMATION_MESSAGE);
-                       
+                        JOptionPane.showMessageDialog(null, "Email already exists", "Invalid", JOptionPane.INFORMATION_MESSAGE);      
+                    }
+                    else if (signUp.checkUserName(teamMembers, email, userName, password, jobType)){
+                        
+                        JOptionPane.showMessageDialog(null, " Username already exists", "Invalid", JOptionPane.INFORMATION_MESSAGE);                              
                     }
                     else{
                         TeamMember newt = new TeamMember(email.getText(),userName.getText(), password.getText(),jobType.getText());
