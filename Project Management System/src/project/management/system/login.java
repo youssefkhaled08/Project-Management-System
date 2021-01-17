@@ -1,33 +1,28 @@
+
+ 
 package project.management.system;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 
 
 public class login {
     
-    Scanner login = new Scanner(System.in);
-    TeamMember loginInfo =new TeamMember();
-    public login(){
+    
+    
+    
+    public static void askForInfo (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
         
-    }
-    public void askForInfo (ArrayList <TeamMember> teamMembers) {
-        System.out.println("Enter Username:");
-        loginInfo.setUsername(login.next());
-        System.out.println("Enter Password : ");
-        loginInfo.setPassword(login.next());
         for (int i=0;i<teamMembers.size();i++)
         {
-            if (loginInfo.getUsername().compareTo(teamMembers.get(i).getUsername())==0 && loginInfo.getPassword().compareTo(teamMembers.get(i).getPassword())==0)
+            if (userName.getText().equals(String.valueOf(teamMembers.get(i).getUsername()))&&password.getText().equals(String.valueOf(teamMembers.get(i).getPassword())))
             {
-                System.out.println("Logged");
-                break;
+                JOptionPane.showMessageDialog(null, "Logged", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             else
             {
-                System.out.println("Wrong Information Try Again");
-                break;
+                JOptionPane.showMessageDialog(null, "Wrong Username Or Password", "Invalid", JOptionPane.INFORMATION_MESSAGE);
             }
             
             
@@ -35,5 +30,25 @@ public class login {
         }
         
     }
- 
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+

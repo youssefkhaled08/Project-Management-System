@@ -78,6 +78,7 @@ public class signUp {
                         }   
                         TeamMember added = new TeamMember(email.getText(),userName.getText(), password.getText(),accType);
                         teamMembers.add(added);
+                        
                     }
                     
                 }

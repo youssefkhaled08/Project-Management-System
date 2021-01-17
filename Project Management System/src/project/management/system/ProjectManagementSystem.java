@@ -11,8 +11,8 @@ public class ProjectManagementSystem {
        
        teamMembers.add(a7a1);
        teamMembers.add(a7a2);
-
-       new sign_up(teamMembers).setVisible(true);
+       
+       new log_in(teamMembers).setVisible(true);
         
         
 
