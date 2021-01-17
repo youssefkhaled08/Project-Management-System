@@ -3,20 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.management.system;
+package project.management.system.GUI;
 
+import project.management.system.SignUp;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import project.management.system.TeamMember;
 
 /**
  *
  * @author ALKODS
  */
-public class sign_up extends javax.swing.JFrame {
+public class GUISignUp extends javax.swing.JFrame {
 
-    public sign_up(ArrayList <TeamMember> teamMembers) {
+    public GUISignUp(ArrayList <TeamMember> teamMembers) {
         this.setSize(600,600);
         this.setTitle("Sign Up");
         initComponents();
@@ -24,7 +26,7 @@ public class sign_up extends javax.swing.JFrame {
         signUpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                signUp.register(teamMembers, email, userName, password,teamMember,teamLeader); 
+                SignUp.register(teamMembers, email, userName, password,teamMember,teamLeader); 
             }
  
         });
@@ -185,14 +187,15 @@ public class sign_up extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(sign_up.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(sign_up.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(sign_up.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(sign_up.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

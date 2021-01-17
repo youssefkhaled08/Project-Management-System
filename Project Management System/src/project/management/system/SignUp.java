@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import project.management.system.TeamMember;
 
 
-public class signUp {
+public class SignUp {
     
   
-    public signUp(ArrayList <TeamMember> teamMembers) {   
+    public SignUp(ArrayList <TeamMember> teamMembers) {   
     }
 
     
@@ -59,10 +60,10 @@ public class signUp {
 
                 
                 else{
-                    if(signUp.checkEmail(teamMembers, email)){
+                    if(SignUp.checkEmail(teamMembers, email)){
                         JOptionPane.showMessageDialog(null, "Email already exists, Try another", "Invalid", JOptionPane.INFORMATION_MESSAGE);      
                     }
-                    else if (signUp.checkUserName(teamMembers,userName)){
+                    else if (SignUp.checkUserName(teamMembers,userName)){
                         
                         JOptionPane.showMessageDialog(null, " Username already exists, Try another", "Invalid", JOptionPane.INFORMATION_MESSAGE);                              
                     }

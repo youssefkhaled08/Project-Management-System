@@ -1,5 +1,6 @@
 package project.management.system;
 
+import project.management.system.GUI.GUILogIn;
 import java.util.ArrayList;
 
 public class ProjectManagementSystem {
@@ -12,7 +13,7 @@ public class ProjectManagementSystem {
        teamMembers.add(a7a1);
        teamMembers.add(a7a2);
        
-       new log_in(teamMembers).setVisible(true);
+       new GUILogIn(teamMembers).setVisible(true);
         
         
 

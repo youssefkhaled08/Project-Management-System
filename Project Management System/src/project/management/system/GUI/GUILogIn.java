@@ -3,27 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.management.system;
+package project.management.system.GUI;
 
+import project.management.system.LogIn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import project.management.system.TeamMember;
 
 /**
  *
  * @author user
  */
-public class log_in extends javax.swing.JFrame {
+public class GUILogIn extends javax.swing.JFrame {
 
     /**
      * Creates new form log_in
      */
-    public log_in(ArrayList <TeamMember> teamMembers) {
+    public GUILogIn(ArrayList <TeamMember> teamMembers) {
         initComponents();
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                login.askForInfo(teamMembers, userName, userName);
+                LogIn.askForInfo(teamMembers, userName, userName);
             }
         });
         
@@ -154,14 +156,15 @@ public class log_in extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
