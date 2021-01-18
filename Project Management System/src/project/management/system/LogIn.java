@@ -13,43 +13,32 @@ public class LogIn {
     
     
     
-    public static void askForInfo (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
-        
-        for (int i=0;i<teamMembers.size();i++)
+    public static boolean validation (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
+        boolean found = false;
+        for (int i = 0 ; i < teamMembers.size() ; i++)
         {
-            if (userName.getText().equals(String.valueOf(teamMembers.get(i).getUsername()))&&password.getText().equals(String.valueOf(teamMembers.get(i).getPassword())))
+            if (userName.getText().equals(teamMembers.get(i).getUsername()) && password.getText().equals(teamMembers.get(i).getPassword()))
             {
-                JOptionPane.showMessageDialog(null, "Logged", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    found = true; 
+                    return found;    
             }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Wrong Username Or Password", "Invalid", JOptionPane.INFORMATION_MESSAGE);
-            }
-            
-            
-            
-        }
         
+        }
+        return found;
     }
     
+    public static void logIn(ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ){
+        if (validation(teamMembers, userName, password))
+                {
+                    JOptionPane.showMessageDialog(null, "Ok", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }
+        else{
+            JOptionPane.showMessageDialog(null, "Wrong username OR password", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+            
+        }
+    }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 

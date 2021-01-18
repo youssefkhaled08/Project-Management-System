@@ -1,17 +1,17 @@
 package project.management.system;
 
-import project.management.system.GUI.GUILogIn;
+
+import project.management.system.GUI.*;
 import java.util.ArrayList;
 
 public class ProjectManagementSystem {
 
     public static void main(String[] args) {
         ArrayList <TeamMember> teamMembers = new ArrayList<>(); 
-       TeamMember  a7a1 = new TeamMember("ahmed@gmail","ahmed","123","member");
-        TeamMember a7a2 = new TeamMember("lol@gmail","lol","123","leader");
-       
-       teamMembers.add(a7a1);
-       teamMembers.add(a7a2);
+       TeamMember  user1 = new TeamMember("ahmed@gmail","ahmed","123","Team Member");
+       TeamMember  user2 = new TeamMember("sasa","sasa","123","Team Leader");
+       teamMembers.add(user1);
+       teamMembers.add(user2);
        
        new GUILogIn(teamMembers).setVisible(true);
         

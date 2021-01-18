@@ -25,7 +25,7 @@ public class GUILogIn extends javax.swing.JFrame {
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                LogIn.askForInfo(teamMembers, userName, userName);
+                LogIn.logIn(teamMembers, userName, password);
             }
         });
         
