@@ -5,13 +5,12 @@ package project.management.system;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
-import project.management.system.TeamMember;
 
 
 public class LogIn {
     
     
-    
+    private static String accType;
     
     public static boolean validation (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
         boolean found = false;
@@ -19,6 +18,7 @@ public class LogIn {
         {
             if (userName.getText().equals(teamMembers.get(i).getUsername()) && password.getText().equals(teamMembers.get(i).getPassword()))
             {
+                    accType = teamMembers.get(i).getAccountType();
                     found = true; 
                     return found;    
             }
@@ -30,7 +30,12 @@ public class LogIn {
     public static void logIn(ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ){
         if (validation(teamMembers, userName, password))
                 {
-                    JOptionPane.showMessageDialog(null, "Ok", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                    if(accType.equals("Team Member")){
+                        JOptionPane.showMessageDialog(null, "logged as Team Member", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else if(accType.equals("Team Leader")){
+                        JOptionPane.showMessageDialog(null, "logged as Team Leader", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                    }                    
                     
                 }
         else{

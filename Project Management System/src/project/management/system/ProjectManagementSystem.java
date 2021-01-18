@@ -14,8 +14,8 @@ public class ProjectManagementSystem {
        teamMembers.add(user2);
        
        new GUILogIn(teamMembers).setVisible(true);
-        
-        
+       
+       System.out.println(teamMembers.indexOf(user1));
 
     }    
 }

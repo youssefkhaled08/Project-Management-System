@@ -22,12 +22,20 @@ public class GUILogIn extends javax.swing.JFrame {
      */
     public GUILogIn(ArrayList <TeamMember> teamMembers) {
         initComponents();
+        
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 LogIn.logIn(teamMembers, userName, password);
             }
         });
+         signUp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new GUISignUp(teamMembers).setVisible(true);
+                dispose();
+            }
+        });        
         
         
     }
@@ -49,6 +57,7 @@ public class GUILogIn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        signUp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Project Management System");
@@ -76,6 +85,8 @@ public class GUILogIn extends javax.swing.JFrame {
 
         jLabel5.setText("Or Sign up If You Are New");
 
+        signUp.setText("Sign Up");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,7 +94,9 @@ public class GUILogIn extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(113, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(370, 370, 370))
+                .addGap(83, 83, 83)
+                .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(203, 203, 203))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -124,8 +137,10 @@ public class GUILogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(signUp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,6 +198,7 @@ public class GUILogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField password;
+    private javax.swing.JButton signUp;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 }

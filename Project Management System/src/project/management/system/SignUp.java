@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import project.management.system.GUI.GUILogIn;
-import project.management.system.TeamMember;
 
 
 public class SignUp {
@@ -80,6 +78,16 @@ public class SignUp {
                         }   
                         TeamMember added = new TeamMember(email.getText(),userName.getText(), password.getText(),accType);
                         teamMembers.add(added);
+                        
+                        
+                        //We will replace this with the Pagew we'll creaate
+                        if(added.getAccountType().equals("Team Member")){
+                        JOptionPane.showMessageDialog(null, "logged as Team Member", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        else if(added.getAccountType().equals("Team Leader")){
+                        JOptionPane.showMessageDialog(null, "logged as Team Leader", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                        }                    
+                    
                         
                     }
                     
