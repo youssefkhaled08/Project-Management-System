@@ -5,10 +5,11 @@
  */
 package project.management.system.GUI;
 
-import project.management.system.LogIn;
+import project.management.system.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import project.management.system.Task;
 import project.management.system.TeamMember;
 
 /**
@@ -20,19 +21,18 @@ public class GUILogIn extends javax.swing.JFrame {
     /**
      * Creates new form log_in
      */
-    public GUILogIn(ArrayList <TeamMember> teamMembers) {
+    public GUILogIn(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers) {
         initComponents();
-        
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                LogIn.logIn(teamMembers, userName, password);
+                LogIn.logIn(tasks,teamMembers, userName, password);
             }
         });
          signUp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new GUISignUp(teamMembers).setVisible(true);
+                new GUISignUp(tasks,teamMembers).setVisible(true);
                 dispose();
             }
         });        
@@ -79,8 +79,10 @@ public class GUILogIn extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Username");
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Password");
 
         jLabel5.setText("Or Sign up If You Are New");
@@ -112,11 +114,11 @@ public class GUILogIn extends javax.swing.JFrame {
                         .addGap(193, 193, 193)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(196, 196, 196)
-                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -140,7 +142,7 @@ public class GUILogIn extends javax.swing.JFrame {
                 .addComponent(signUp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();

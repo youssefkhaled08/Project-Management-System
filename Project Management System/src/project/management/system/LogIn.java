@@ -5,12 +5,14 @@ package project.management.system;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
+import project.management.system.GUI.*;
 
 
 public class LogIn {
     
     
     private static String accType;
+    private static String username;
     
     public static boolean validation (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
         boolean found = false;
@@ -19,6 +21,7 @@ public class LogIn {
             if (userName.getText().equals(teamMembers.get(i).getUsername()) && password.getText().equals(teamMembers.get(i).getPassword()))
             {
                     accType = teamMembers.get(i).getAccountType();
+                    username = teamMembers.get(i).getUsername();
                     found = true; 
                     return found;    
             }
@@ -27,15 +30,15 @@ public class LogIn {
         return found;
     }
     
-    public static void logIn(ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ){
+    public static void logIn(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ){
         if (validation(teamMembers, userName, password))
                 {
                     if(accType.equals("Team Member")){
-                        JOptionPane.showMessageDialog(null, "logged as Team Member", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                        new GUITeamMember().setVisible(true);
                     }
                     else if(accType.equals("Team Leader")){
-                        JOptionPane.showMessageDialog(null, "logged as Team Leader", "Invalid", JOptionPane.INFORMATION_MESSAGE);
-                    }                    
+                       new GUITeamLeader(tasks).setVisible(true);
+                    }
                     
                 }
         else{

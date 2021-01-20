@@ -5,11 +5,11 @@
  */
 package project.management.system.GUI;
 
-import project.management.system.SignUp;
+import project.management.system.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import project.management.system.TeamMember;
+import project.management.system.Task;
 
 /**
  *
@@ -17,7 +17,7 @@ import project.management.system.TeamMember;
  */
 public class GUISignUp extends javax.swing.JFrame {
 
-    public GUISignUp(ArrayList <TeamMember> teamMembers) {
+    public GUISignUp(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers) {
         this.setSize(600,600);
         this.setTitle("Sign Up");
         initComponents();
@@ -25,7 +25,7 @@ public class GUISignUp extends javax.swing.JFrame {
         signUpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                SignUp.register(teamMembers, email, userName, password,teamMember,teamLeader); 
+                SignUp.register(tasks,teamMembers, email, userName, password,teamMember,teamLeader); 
             }
  
         });

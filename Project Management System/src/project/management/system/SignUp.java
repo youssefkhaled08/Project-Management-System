@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
+import project.management.system.GUI.*;
 
 public class SignUp {
     
@@ -40,7 +40,7 @@ public class SignUp {
     
     
     
-    public static void register(ArrayList <TeamMember> teamMembers, JTextField email, JTextField userName, JTextField password,JRadioButton teamMember,JRadioButton teamLeader){
+    public static void register(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers, JTextField email, JTextField userName, JTextField password,JRadioButton teamMember,JRadioButton teamLeader){
                  if(email.getText().equals("")){
                     JOptionPane.showMessageDialog(null, "Email is required", "Invalid", JOptionPane.INFORMATION_MESSAGE);
 
@@ -82,10 +82,10 @@ public class SignUp {
                         
                         //We will replace this with the Pagew we'll creaate
                         if(added.getAccountType().equals("Team Member")){
-                        JOptionPane.showMessageDialog(null, "logged as Team Member", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                            new GUITeamMember().setVisible(true);
                         }
                         else if(added.getAccountType().equals("Team Leader")){
-                        JOptionPane.showMessageDialog(null, "logged as Team Leader", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                            new GUITeamLeader(tasks).setVisible(true);
                         }                    
                     
                         

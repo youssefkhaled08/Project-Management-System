@@ -4,14 +4,15 @@ public class Task {
     
     private String taskName;     
     private String taskDeadline;
-   
-    public enum Status 
+    private Status taskStatus;
+    
+    public static enum Status 
     {       
         TO_DO,
         ON_GOING,
         DONE
     }
-    private Status taskStatus;
+   
 
     public Task (String taskName, String taskDeadline, Status taskStatus)
     {
@@ -42,5 +43,11 @@ public class Task {
     public Status getTaskStatus(){
         return taskStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +"taskName=" + taskName + ", taskDeadline=" + taskDeadline + ", taskStatus=" + taskStatus + '}';
+    }
+    
 }
 
