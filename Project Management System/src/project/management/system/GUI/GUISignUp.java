@@ -25,7 +25,8 @@ public class GUISignUp extends javax.swing.JFrame {
         signUpBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                SignUp.register(tasks,teamMembers, email, userName, password,teamMember,teamLeader); 
+                SignUp.register(tasks,teamMembers, email, userName, password,teamMember,teamLeader);
+                dispose();
             }
  
         });
