@@ -75,6 +75,7 @@ public class GUILogIn extends javax.swing.JFrame {
         Login.setFont(new java.awt.Font("Castellar", 1, 18)); // NOI18N
         Login.setText("Log In");
         Login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Login.setFocusable(false);
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginActionPerformed(evt);
@@ -94,6 +95,7 @@ public class GUILogIn extends javax.swing.JFrame {
 
         signUp.setFont(new java.awt.Font("Castellar", 1, 18)); // NOI18N
         signUp.setText("Sign Up");
+        signUp.setFocusable(false);
         signUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpActionPerformed(evt);
