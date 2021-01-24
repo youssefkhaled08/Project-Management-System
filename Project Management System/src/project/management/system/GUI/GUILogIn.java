@@ -27,6 +27,7 @@ public class GUILogIn extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 LogIn.logIn(tasks,teamMembers, userName, password);
+                dispose();
             }
         });
          signUp.addActionListener(new ActionListener() {
@@ -36,7 +37,7 @@ public class GUILogIn extends javax.swing.JFrame {
                 dispose();
             }
         });        
-        
+        dispose();
         
     }
 

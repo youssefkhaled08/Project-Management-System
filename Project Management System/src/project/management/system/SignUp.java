@@ -82,7 +82,7 @@ public class SignUp {
                         
                         //We will replace this with the Pagew we'll creaate
                         if(added.getAccountType().equals("Team Member")){
-                            new GUITeamMember().setVisible(true);
+                            new GUITasks().setVisible(true);
                         }
                         else if(added.getAccountType().equals("Team Leader")){
                             new GUITeamLeader(tasks).setVisible(true);

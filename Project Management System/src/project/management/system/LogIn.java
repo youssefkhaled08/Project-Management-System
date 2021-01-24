@@ -34,7 +34,7 @@ public class LogIn {
         if (validation(teamMembers, userName, password))
                 {
                     if(accType.equals("Team Member")){
-                        new GUITeamMember().setVisible(true);
+                        new GUITasks().setVisible(true);
                     }
                     else if(accType.equals("Team Leader")){
                        new GUITeamLeader(tasks).setVisible(true);
