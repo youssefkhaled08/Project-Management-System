@@ -4,43 +4,35 @@ import java.util.ArrayList;
 import project.management.system.Task.*;
 
 public class TeamMember {
+    private String email;
     private String username;
     private String password;
     private String accountType;
-    private String email;
-    protected ArrayList<Task> assignedTasks = new ArrayList<>();
+    public ArrayList<Task> assignedTasks = new ArrayList<>();
 
     public TeamMember() {
     }
 
     public TeamMember(String email, String username,  String password ,String accountType) {
+        this.email = email;
         this.username = username;
         this.password = password;
         this.accountType = accountType;
-        this.email = email;
     }
-    
-    public void setUsername(String username){
-        this.username = username;
-    }
-
-    public String getAccountType() {
-        return accountType;
-    }
-
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
+    public void setUsername(String username){
+        this.username = username;
+    }
     public void setPassword(String password){
         this.password = password;
+    }
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+     public String getEmail() {
+        return email;
     }
     public String getUsername(){
         return username;
@@ -48,19 +40,15 @@ public class TeamMember {
     public String getPassword(){
         return password;
     }
+    public String getAccountType() {
+        return accountType;
+    }    
     public void editTask(int index, String taskName, String taskDeadline, Status taskStatus){
         assignedTasks.get(index).setTaskName(taskName);
         assignedTasks.get(index).setTaskDeadline(taskDeadline);
         assignedTasks.get(index).setTaskStatus(taskStatus);
     }
-    public void getAssignedTasks(){
-        System.out.println("Tasks:- ");
-        for (Task temp : assignedTasks){
-            System.out.println("");
-            System.out.println("Task Name: " + temp.getTaskName());
-            System.out.println("Task Deadline: " + temp.getTaskDeadline());
-            System.out.println("Task Status: " + temp.getTaskStatus());
-            System.out.println("");
-        }
+    public ArrayList getAssignedTasks(){
+        return assignedTasks;
     }
 }

@@ -12,8 +12,8 @@ public class TeamLeader extends TeamMember{
     }
     
     
-    public static void addTask(ArrayList <Task> tasks, JTextField taskName, String taskDeadline, Status taskStatus){
-        tasks.add(new Task(taskName.getText(), String.valueOf(taskDeadline),taskStatus));  
+    public static void addTask(ArrayList <Task> tasks, String taskName, String taskDeadline, Status taskStatus){
+        tasks.add(new Task(String.valueOf(taskName), String.valueOf(taskDeadline),taskStatus));  
     }
     
 }

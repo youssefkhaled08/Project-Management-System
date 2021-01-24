@@ -29,7 +29,7 @@ public class GUITeamLeader extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent ae) {
                 SimpleDateFormat deadline = new SimpleDateFormat("dd-MM-Y");
                 String date = deadline.format(taskDeadline.getDate());
-                TeamLeader.addTask(tasks, taskName, date, Task.Status.TO_DO);
+                TeamLeader.addTask(tasks, taskName.getText(), date, Task.Status.TO_DO);
                 
             }
         });
