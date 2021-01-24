@@ -49,6 +49,7 @@ public class GUITasks extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(900, 600));
 
+        jTable1.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -57,7 +58,10 @@ public class GUITasks extends javax.swing.JFrame {
                 "Task Name", "Task Deadline", "Task Status"
             }
         ));
+        jTable1.setCellSelectionEnabled(true);
+        jTable1.setGridColor(new java.awt.Color(140, 140, 140));
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
