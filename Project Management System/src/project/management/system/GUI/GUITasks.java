@@ -26,12 +26,11 @@ public class GUITasks extends javax.swing.JFrame {
     }
     public void addRow(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        ArrayList <Task> tasksList = tasks;
         Object dataRow[] = new Object[3];
-        for(int i = 0 ; i< tasksList.size(); i++){
-        dataRow[0] = tasksList.get(i).getTaskName();
-        dataRow[1] = tasksList.get(i).getTaskDeadline();
-        dataRow[2] = tasksList.get(i).getTaskStatus();
+        for(int i = 0 ; i< tasks.size(); i++){
+        dataRow[0] = tasks.get(i).getTaskName();
+        dataRow[1] = tasks.get(i).getTaskDeadline();
+        dataRow[2] = tasks.get(i).getTaskStatus();
         model.addRow(dataRow);
         }
     }
