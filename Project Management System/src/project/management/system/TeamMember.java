@@ -1,7 +1,6 @@
 package project.management.system;
 
 import java.util.ArrayList;
-import project.management.system.Task.*;
 
 public class TeamMember {
     private String email;
@@ -43,12 +42,6 @@ public class TeamMember {
     public String getAccountType() {
         return accountType;
     }    
-    public void editTask(int index, String taskName, String taskDeadline, Status taskStatus){
-        assignedTasks.get(index).setTaskName(taskName);
-        assignedTasks.get(index).setTaskDeadline(taskDeadline);
-        assignedTasks.get(index).setTaskStatus(taskStatus);
-    }
-    public ArrayList getAssignedTasks(){
-        return assignedTasks;
-    }
+    
+    
 }

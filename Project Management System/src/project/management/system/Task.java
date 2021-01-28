@@ -6,11 +6,17 @@ public class Task {
     private String taskDeadline;
     private Status taskStatus;
     
-    public static enum Status 
+    public enum Status 
     {       
         TO_DO,
         ON_GOING,
         DONE
+    }
+
+    public Task(Task newTask) {
+        this.taskName = newTask.taskName;
+        this.taskDeadline = newTask.taskDeadline;
+        this.taskStatus = newTask.taskStatus;
     }
    
 

@@ -6,6 +6,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import project.management.system.GUI.*;
+import static project.management.system.ProjectManagementSystem.teamMembers;
+
+
 
 public class SignUp {
     
@@ -15,7 +18,7 @@ public class SignUp {
 
     
     
-    public static boolean checkUserName(ArrayList <TeamMember> teamMembers, JTextField userName){
+    public static boolean checkUserName(JTextField userName){
         boolean foundUser = false;
         for (int j = 0 ; j < teamMembers.size(); j++){
             if (teamMembers.get(j).getUsername().equals(String.valueOf(userName.getText()))){
@@ -27,7 +30,7 @@ public class SignUp {
 
     
     
-    public static boolean checkEmail(ArrayList <TeamMember> teamMembers,JTextField email){
+    public static boolean checkEmail(JTextField email){
         boolean found = false;
         for (int j = 0 ; j < teamMembers.size(); j++){
             if (teamMembers.get(j).getEmail().equals(String.valueOf(email.getText()))){
@@ -40,7 +43,7 @@ public class SignUp {
     
     
     
-    public static void register(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers, JTextField email, JTextField userName, JTextField password,JRadioButton teamMember,JRadioButton teamLeader){
+    public static void register(JTextField email, JTextField userName, JTextField password,JRadioButton teamMember,JRadioButton teamLeader){
                  if(email.getText().equals("")){
                     JOptionPane.showMessageDialog(null, "Email is required", "Invalid", JOptionPane.INFORMATION_MESSAGE);
 
@@ -59,10 +62,10 @@ public class SignUp {
 
                 
                 else{
-                    if(SignUp.checkEmail(teamMembers, email)){
+                    if(SignUp.checkEmail(email)){
                         JOptionPane.showMessageDialog(null, "Email already exists, Try another", "Invalid", JOptionPane.INFORMATION_MESSAGE);      
                     }
-                    else if (SignUp.checkUserName(teamMembers,userName)){
+                    else if (SignUp.checkUserName(userName)){
                         
                         JOptionPane.showMessageDialog(null, " Username already exists, Try another", "Invalid", JOptionPane.INFORMATION_MESSAGE);                              
                     }
@@ -85,7 +88,7 @@ public class SignUp {
                             new GUITasks().setVisible(true);
                         }
                         else if(added.getAccountType().equals("Team Leader")){
-                            new GUITeamLeader(tasks).setVisible(true);
+                            new GUITeamLeader().setVisible(true);
                         }                    
                     
                         

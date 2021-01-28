@@ -10,15 +10,18 @@ public class ProjectManagementSystem {
         
 
     public static void main(String[] args) {
-               TeamMember  user1 = new TeamMember("ahmed@gmail","ahmed","123","Team Member");
+       TeamMember  user1 = new TeamMember("ahmed@gmail","ahmed","123","Team Member");
        TeamMember  user2 = new TeamMember("sasa","sasa","123","Team Leader");
        
        Task task = new Task("Task 1", "25-1-2021", Task.Status.TO_DO);
+       Task task2 = new Task("Task 2", "25-1-2021", Task.Status.TO_DO);
+
        tasks.add(task);
+       tasks.add(task2);
        
        teamMembers.add(user1);
        teamMembers.add(user2);
        
-       new GUILogIn(tasks,teamMembers).setVisible(true);
+       new GUILogIn().setVisible(true);
     }    
 }

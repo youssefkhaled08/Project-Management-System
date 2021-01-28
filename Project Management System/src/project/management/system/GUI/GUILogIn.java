@@ -8,9 +8,11 @@ package project.management.system.GUI;
 import project.management.system.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import project.management.system.Task;
-import project.management.system.TeamMember;
+import static project.management.system.ProjectManagementSystem.teamMembers;
+import static project.management.system.ProjectManagementSystem.tasks;
+
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,20 +23,30 @@ public class GUILogIn extends javax.swing.JFrame {
     /**
      * Creates new form log_in
      */
-    public GUILogIn(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers) {
+    public GUILogIn() {
         initComponents();
         Login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                LogIn.logIn(tasks,teamMembers, userName, password);
-                dispose();
+                if(userName.getText().equals("")){
+                    
+                   JOptionPane.showMessageDialog(null, "Username is required", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else if (password.getText().equals("")){
+                    
+                   JOptionPane.showMessageDialog(null, "Passowrd is required", "Invalid", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    LogIn.logIn(tasks,teamMembers, userName, password);
+                }
+                
             }
         });
          signUp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new GUISignUp(tasks,teamMembers).setVisible(true);
-                dispose();
+                new GUISignUp().setVisible(true);
+                
             }
         });        
         dispose();

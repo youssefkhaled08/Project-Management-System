@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
 import project.management.system.GUI.*;
+import static project.management.system.ProjectManagementSystem.teamMembers;
+
 
 
 public class LogIn {
@@ -14,7 +16,7 @@ public class LogIn {
     private static String accType;
     private static String username;
     
-    public static boolean validation (ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ) {
+    public static boolean validation (JTextField userName,JTextField password ) {
         boolean found = false;
         for (int i = 0 ; i < teamMembers.size() ; i++)
         {
@@ -31,13 +33,13 @@ public class LogIn {
     }
     
     public static void logIn(ArrayList <Task> tasks,ArrayList <TeamMember> teamMembers , JTextField userName,JTextField password ){
-        if (validation(teamMembers, userName, password))
+        if (validation(userName, password))
                 {
                     if(accType.equals("Team Member")){
-                        new GUITasks().setVisible(true);
+                        new GUITeamMember().setVisible(true);
                     }
                     else if(accType.equals("Team Leader")){
-                       new GUITeamLeader(tasks).setVisible(true);
+                       new GUITeamLeader().setVisible(true);
                     }
                     
                 }
@@ -46,6 +48,7 @@ public class LogIn {
             
         }
     }
+
 
     
 }
